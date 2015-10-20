@@ -4,6 +4,7 @@
 # Question 1: Ruby objects and classes.
 # How would one find the class of the below objects.
 
+puts whateveritis.class
 "Hello World"
 33
 65.89
@@ -17,18 +18,25 @@ else
   puts "it's false"
 end
 
-# 2.1 Substitue "hello" && 4.5 for 33 && 55 above. What's the output?
-# 2.2 Substitue nil && 88 for 33 && 55 above. What's the output?
-# 2.4 Substitue 63.4 < 64. What's the output?
+true
 
+# 2.1 Substitue "hello" && 4.5 for 33 && 55 above. What's the output?
+true
+# 2.2 Substitue nil && 88 for 33 && 55 above. What's the output?
+false
+# 2.4 Substitue 63.4 < 64. What's the output?
+false
 # Question 3 :Strings
 
 # How would you (Yes, you can look up the String methods!):
 
 # 3.1. determine if a string is included another another string?
+puts "simple string".include?('ple')
 # 3.2. determine if the length of a string?
+puts "simple string".length
 # 3.3. Go from the string "eels in my hovercraft" to "fish in my sink" but don't
 # change the string "eels in my hovercraft"
+puts "eels string" + 'fish string'
 
 
 # Question 4 : Variables
@@ -38,9 +46,12 @@ end
 vehicle = "4 wheel Bus"
 
 # 4.1 to "6 wheel Bus"
+puts vehicle.gsub!(/4/, '6')
 # 4.2 to "6 wheel tank"
+puts vehicle.gsub!(/Bus/, 'tank')
 # 4.3 Create a NEW string from the string in 4.2 that will be
 # "6 wheel tank that shoots rainbow bunnnies"
+var new_vehicle = vehicle + " that shoots rainbow bunnies"
 
 # Question 5 : Loop
 # - write a loop that guesses your age.
@@ -50,6 +61,23 @@ vehicle = "4 wheel Bus"
 # - aaaah maaan c'mon, huh, WTF
 # - I'm not kidding, say unkind works to a user that thinks your 10 years older
 #   than you are.
+
+number = 33 # number to guess
+guess = 4  # make a wrong guess
+tries = 1
+max_tries = 4
+
+while guess != number
+  puts "Guess my age: "
+  guess = gets.chomp.to_i
+  unless tries < max_tries
+    puts "Sorry, that's wrong...but I'm flattered"
+    break
+  end
+  tries += 1
+end
+
+puts "You guessed right!!" if guess == number
 
 # Bonus Question: Who said this?
 
